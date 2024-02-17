@@ -6,12 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>My secret info</h1>
-    <input type="text">
-    <button id="btnDelete">Delete</button>
+    <h1 id="secretInfo">My secret info</h1>
+    <input id="deleteConfirm" type="text" placeholder="Please type Delete">
+    <button id="btnDelete" disabled>Delete</button>
     <script>
+        document.getElementById("deleteConfirm").addEventListener("keyup", function(event){
+            const text = event.target.value;
+            const buttonDelete = document.getElementById("btnDelete");
+            // console.log(text);
+            if(text === "delete"){
+                // buttonDelete.style.display = "inline";
+                buttonDelete.removeAttribute("disabled");
+            }
+            else{
+                buttonDelete.setAttribute("disabled", true);
+            }
+        })
+
         document.getElementById("btnDelete").addEventListener("click", function(){
-            
+            const secret = document.getElementById("secretInfo");
+            secret.style.display = "none";
         })
     </script>
 </body>
