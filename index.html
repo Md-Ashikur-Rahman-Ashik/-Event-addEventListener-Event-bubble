@@ -18,11 +18,27 @@
     <button id="makePink">Make Pink</button>
     <button id="makeGreen">Make Green</button>
     <button id="makeGoldenRod">Make GoldenRod</button>
+    <br>
+    <p id="inputInfo">Default input text</p>
+    <!-- <br> -->
+    <input id="inputField" type="text">
+    <button id="btnUpdate">Update</button>
     <script src="js/events.js"></script>
     <script>
         // document.getElementById("makeGoldenRod", function(){
         //     document.body.style.backgroundColor = "#DAA520";
         // })
+        document.getElementById("btnUpdate").addEventListener("click", function(){
+          // console.log("Update button clicked");
+          const desireInputField = document.getElementById("inputField");
+          // console.log(desireInputField);
+          // console.log(desireInputField.value);
+          const inputText = desireInputField.value;
+          const changedInput = document.getElementById("inputInfo");
+          changedInput.innerText = inputText;
+          // inputText.value = "";
+          desireInputField.value = "";
+        })
         
     </script>
   </body>
